@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick & Morty — поиск персонажей</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>Rick & Morty: поиск персонажей</h1>
+
+        <input type="text" id="search" class="search" placeholder="Введите имя персонажа, например Rick"
+            autocomplete="off">
+
+        <div id="loader" class="loader hidden">
+            <div class="spinner"></div>
+            <span>Загрузка...</span>
+        </div>
+
+        <p id="message" class="message hidden"></p>
+
+        <section id="cards" class="cards"></section>
+
+        <div id="pagination" class="pagination">
+            <button id="prev" type="button">Назад</button>
+            <span id="page-info">Страница 1 из 1</span>
+            <button id="next" type="button">Вперёд</button>
+        </div>
+
+        <section class="details">
+            <h2>Выбранный персонаж (JSON)</h2>
+            <pre id="output">Кликните на карточку персонажа</pre>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
