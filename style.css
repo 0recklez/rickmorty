@@ -1,0 +1,180 @@
+:root {
+    --bg: #12141a;
+    --surface: #1c1f28;
+    --surface-hover: #242836;
+    --border: #343a4a;
+    --text: #e6e8ee;
+    --text-muted: #9aa1b2;
+    --accent: #5aa2ff;
+    --accent-hover: #3f8bef;
+    --disabled: #3a4050;
+    --error: #ff6b6b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 16px;
+    background: var(--surface);
+    color: var(--text);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+}
+
+.search::placeholder {
+    color: var(--text-muted);
+}
+
+.search:focus {
+    border-color: var(--accent);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    color: var(--text-muted);
+}
+
+.spinner {
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.message {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 18px;
+}
+
+.message.error {
+    color: var(--error);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.15s, background 0.15s, box-shadow 0.15s;
+}
+
+.card:hover {
+    background: var(--surface-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.5);
+}
+
+.card.active {
+    outline: 3px solid var(--accent);
+}
+
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    margin: 10px 10px 4px;
+    font-size: 16px;
+}
+
+.card p {
+    margin: 0 10px 12px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* Пагинация */
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.pagination button {
+    padding: 8px 18px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #0b0d12;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: var(--accent-hover);
+}
+
+.pagination button:disabled {
+    background: var(--disabled);
+    color: var(--text-muted);
+    cursor: not-allowed;
+}
+
+.details {
+    margin-top: 30px;
+}
+
+.details pre {
+    background: #0b0d12;
+    color: #a5d6ff;
+    border: 1px solid var(--border);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 14px;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
